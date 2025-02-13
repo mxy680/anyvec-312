@@ -1,4 +1,16 @@
-import subprocess
-print("Subprocess module is available!")
-result = subprocess.run(["echo", "Hello from subprocess!"], capture_output=True, text=True)
-print("Output:", result.stdout)
+import transformers
+import torch
+from transformers import pipeline
+
+
+#Ensures everything is already downloaded
+print(f"Transformers version: {transformers.__version__}")
+print(f"PyTorch version: {torch.__version__}")
+print(f"CUDA Available: {torch.cuda.is_available()}")
+
+
+from transformers import CLIPProcessor, CLIPModel
+
+model = CLIPModel.from_pretrained("openai/clip-vit-large-patch14")
+processor = CLIPProcessor.from_pretrained("openai/clip-vit-large-patch14")
+
