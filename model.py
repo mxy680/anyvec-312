@@ -21,7 +21,7 @@ url = "http://images.cocodataset.org/val2017/000000039769.jpg"
 image = Image.open(requests.get(url, stream=True).raw)
 
 # Define text labels to compare the image against
-text_labels = ["a photo of a cat", "a photo of a dog"]
+text_labels = ["a photo of a fly", "a photo of a cat"]
 
 # Process inputs
 inputs = processor(text=text_labels, images=image, return_tensors="pt", padding=True)
