@@ -1,6 +1,7 @@
 [project]
 name = "anyvec-312"
 version = "0.1.0"
+
 description = "a package that vectorizes any file"
 authors = [
     {name = "atharva789",email = "62479753+atharva789@users.noreply.github.com"}
@@ -16,9 +17,7 @@ dependencies = [
     "requests (>=2.32.3,<3.0.0)",
     "pydantic (>=2.10.6,<3.0.0)",
     "python-dotenv (>=1.0.1,<2.0.0)"
-
 ]
-
 
 [build-system]
 requires = ["poetry-core>=2.0.0,<3.0.0"]

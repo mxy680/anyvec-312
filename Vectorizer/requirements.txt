@@ -1,0 +1,6 @@
+Requirements
+User has Docker.
+In their terminal, they run a docker command.
+
+That docker file will create a linux machine, on the user's computer. It will Install hugging face, along with the dependenices it needs.
+pip install Pillow requests
