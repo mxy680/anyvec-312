@@ -1,0 +1,26 @@
+# Use a Python base image
+FROM python:3.11-slim
+
+# Configure environment variables
+ENV PYTHONUNBUFFERED=1 \
+  PYTHONDONTWRITEBYTECODE=1 \
+  POETRY_VERSION=1.7.1 \
+  POETRY_NO_INTERACTION=1 \
+  POETRY_VIRTUALENVS_CREATE=false
+
+RUN pip install --upgrade pip && \
+  pip install "poetry" 
+# Set the working directory
+
+COPY ../pyproject.toml ../poetry.locl /app/vectorizer/
+
+RUN poetry install --no-interaction --no-ansi
+
+COPY . /app
+
+WORKDIR /app
+
+# Expose the port
+# EXPOSE 8000
+
+CMD ["poetry", "run", "python", "model.py"]
