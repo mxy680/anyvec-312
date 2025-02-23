@@ -8,14 +8,6 @@ import requests
 
 app = FastAPI()
 
-@app.on_event("startup")
-async def startup():
-  await prisma.connect()
-
-@app.on_event("shutdown")
-async def shutdown():
-  await prisma.disconnect()
-
 origins = [
   "http://localhost",
   "http://localhost:3000",

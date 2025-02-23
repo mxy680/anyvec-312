@@ -12,9 +12,9 @@ RUN pip install --upgrade pip && \
   pip install "poetry" 
 # Set the working directory
 
-COPY pyproject.toml poetry.lock ./
+COPY pyproject.toml poetry.lock README.md ./
 
-RUN poetry install --no-interaction --no-ansi
+RUN poetry install --no-root
 
 COPY . /app/
 
