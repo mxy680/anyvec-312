@@ -1,15 +1,23 @@
 [project]
 name = "anyvec-312"
 version = "0.1.0"
-description = ""
+
+description = "a package that vectorizes any file"
 authors = [
-    {name = "Monish Sinha",email = "monish9sinha@gmail.com"}
+    {name = "atharva789",email = "62479753+atharva789@users.noreply.github.com"}
 ]
 readme = "README.md"
-requires-python = ">=3.12"
+requires-python = ">=3.9"
 dependencies = [
+    "torch (>=2.6.0,<3.0.0)",
+    "transformers (>=4.48.3,<5.0.0)",
+    "pymupdf (>=1.25.3,<2.0.0)",
+    "fastapi (>=0.115.8,<0.116.0)",
+    "uvicorn (>=0.34.0,<0.35.0)",
+    "requests (>=2.32.3,<3.0.0)",
+    "pydantic (>=2.10.6,<3.0.0)",
+    "python-dotenv (>=1.0.1,<2.0.0)"
 ]
-
 
 [build-system]
 requires = ["poetry-core>=2.0.0,<3.0.0"]
