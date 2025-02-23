@@ -1,0 +1,19 @@
+services:
+  api:
+    build:
+      context: ./api
+      dockerfile: dockerfile
+    container_name: anyvec_api
+    ports:
+      - "8080:8000"
+    volumes:
+      - ./api:/app/api  # Only mount the app directory for live reload
+    networks:
+      - shared-network
+    command: >
+      sh -c "
+      uvicorn main:app --host 0.0.0.0 --port 8000 --reload
+      "
+networks:
+  shared-network:
+    external: true
