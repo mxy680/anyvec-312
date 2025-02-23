@@ -12,13 +12,13 @@ RUN pip install --upgrade pip && \
   pip install "poetry" 
 # Set the working directory
 
-COPY ../pyproject.toml ../poetry.locl /app/api/
+COPY pyproject.toml poetry.lock ./
 
 RUN poetry install --no-interaction --no-ansi
 
-COPY . /app
+COPY . /app/
 
-WORKDIR /app
+WORKDIR /app/
 
 # Expose the port
 EXPOSE 8000
