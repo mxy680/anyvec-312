@@ -20,9 +20,11 @@ class AnyVec:
       payload = {
         "file_url": url
       }
-      response = await requests.get((self.docker_endpoint + "/vectorize"), json=payload)
+      response = await requests.post((self.docker_endpoint + "/vectorize"), json=payload)
       if response.status_code==200:
         print("vectors generated successfully!")
       vectors = response.json()
     return vectors
   
+  
+  #my_package = Any
